@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+    <meta name="description" content="Lembaga Amil Zakat, Wakaf & Shodaqoh Khoiro Ummah - Menebar Kebaikan, Menyentuh Hati">
+    <meta name="theme-color" content="#1e3c72">
+    <title>Lembaga Amil Zakat, Wakaf & Shodaqoh Khoiro Ummah</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/logo.png" type="image/png">
+    
+    <!-- Preconnect untuk performa -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <!-- Critical CSS Inline -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            overflow-x: hidden;
+        }
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-out;
+        }
+        .loader-content {
+            text-align: center;
+            color: white;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top: 4px solid white;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto 20px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen" class="loading-screen">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p style="font-weight: 500; font-size: 1.1rem;">Loading...</p>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top" id="main-nav">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <img src="assets/images/logo.png" alt="Khoiro Ummah" height="15" loading="eager">
+                <span class="brand-text">Khoiro Ummah</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#program">Program</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#berita">Berita</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galery">Galery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kontak">Kontak</a></li>
+                    <li class="nav-item"><a class="nav-link btn-donate" href="#donasi">Donasi</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-particles" id="hero-particles"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="hero-badge mb-3">
+                        <i class="fas fa-check-circle"></i> Lembaga Terpercaya & Amanah
+                    </div>
+                    <h1 class="hero-title mb-3">Lembaga Amil Zakat, Wakaf & Shodaqoh</h1>
+                    <h2 class="hero-subtitle mb-4">Khoiro Ummah</h2>
+                    <p class="hero-description mb-4">Menebar Kebaikan, Menyentuh Hati. Bersama kita wujudkan keadilan sosial melalui zakat, wakaf, dan shodaqoh yang amanah, transparan, dan berdampak nyata.</p>
+                    <div class="hero-buttons">
+                        <a href="#donasi" class="btn btn-primary btn-lg">
+                            <i class="fas fa-hand-holding-heart me-2"></i>Donasi Sekarang
+                        </a>
+                        <a href="#tentang" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-info-circle me-2"></i>Pelajari Lebih Lanjut
+                        </a>
+                    </div>
+                    <div class="hero-stats mt-5">
+                        <div class="stat-item">
+                            <h3>12.500+</h3>
+                            <p>Mustahik Terbantu</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>300+</h3>
+                            <p>Program Tersalurkan</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>5.000+</h3>
+                            <p>Donatur Aktif</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center hero-image" data-aos="fade-left" data-aos-duration="1000">
+                    <div class="floating-card">
+                        <img src="assets/images/logo.png" alt="Khoiro Ummah" class="img-fluid" loading="eager">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Kami -->
+    <section id="tentang" class="section-padding bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="image-wrapper">
+                        <img src="assets/images/logo.png" loading="lazy" alt="Tentang Kami" class="img-fluid rounded-custom">
+                        <div class="image-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-mosque fa-3x mb-3"></i>
+                                <h4>Sejak 2015</h4>
+                                <p>Melayani Umat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="section-header">
+                        <span class="section-badge">Tentang Kami</span>
+                        <h2 class="section-title">Lembaga Amil Zakat Terpercaya</h2>
+                    </div>
+                    <p class="lead mb-4">Khoiro Ummah didirikan pada tahun 2015 sebagai lembaga amil zakat, wakaf, dan shodaqoh yang berkomitmen penuh terhadap keadilan sosial, pemberdayaan umat, dan peningkatan kesejahteraan masyarakat.</p>
+                    <p class="mb-4">Dengan prinsip <strong>Transparan, Amanah, dan Profesional</strong>, kami menyalurkan dana zakat, wakaf, dan shodaqoh kepada mustahik yang tepat sasaran dan berdampak jangka panjang.</p>
+                    
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5>Amanah & Terpercaya</h5>
+                                <p>Pengelolaan dana yang transparan dan akuntabel</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h5>Berdampak Nyata</h5>
+                                <p>Program yang menyentuh kebutuhan riil masyarakat</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="badges-container mt-4">
+                        <span class="custom-badge badge-success"><i class="fas fa-hand-holding-usd me-2"></i>Zakat Terpercaya</span>
+                        <span class="custom-badge badge-info"><i class="fas fa-landmark me-2"></i>Wakaf Produktif</span>
+                        <span class="custom-badge badge-warning"><i class="fas fa-heart me-2"></i>Shodaqoh Berkelanjutan</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visi & Misi -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <span class="section-badge">Visi & Misi</span>
+                <h2 class="section-title">Komitmen Kami untuk Umat</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="vision-mission-card">
+                        <div class="card-icon vision-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="card-title">Visi</h3>
+                        <p class="card-text">Mewujudkan masyarakat yang adil, sejahtera, dan berakhlak mulia melalui pengelolaan zakat, wakaf, dan shodaqoh yang profesional dan berkelanjutan.</p>
+                        <div class="card-decoration"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="vision-mission-card">
+                        <div class="card-icon mission-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="card-title">Misi</h3>
+                        <ul class="mission-list">
+                            <li><i class="fas fa-check-circle"></i> Mengoptimalkan penyaluran zakat kepada mustahik yang tepat sasaran</li>
+                            <li><i class="fas fa-check-circle"></i> Mendorong wakaf produktif untuk pemberdayaan ekonomi umat</li>
+                            <li><i class="fas fa-check-circle"></i> Memperluas jaringan donatur dan mitra strategis</li>
+                            <li><i class="fas fa-check-circle"></i> Menyediakan layanan digital yang mudah, cepat, dan transparan</li>
+                        </ul>
+                        <div class="card-decoration"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Unggulan -->
+    <section id="program" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <span class="section-badge">Program Kami</span>
+                <h2 class="section-title">Program Unggulan</h2>
+                <p class="section-description">Setiap donasi Anda berkontribusi langsung pada program-program nyata yang menyentuh kehidupan ribuan keluarga</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://img.freepik.com/vektor-gratis/anak-laki-laki-muslim-lucu-memberi-zakat-kepada-orang-kartun-vektor-ikon-ilustrasi-ikon-agama-orang-terisolasi-datar_138676-7942.jpg?semt=ais_incoming&w=740&q=80" loading="lazy" alt="Zakat Produktif">
+                            <div class="program-badge">
+                                <i class="fas fa-hand-holding-usd"></i>
+                            </div>
+                        </div>
+                        <div class="program-content">
+                            <h4 class="program-title">Zakat Produktif</h4>
+                            <p class="program-description">Membantu keluarga pra-sejahtera melalui modal usaha, pelatihan keterampilan, dan pendampingan bisnis.</p>
+                            <div class="program-stats">
+                                <div class="stat">
+                                    <i class="fas fa-users"></i>
+                                    <span>5.000+ Keluarga</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span>1.200+ UMKM</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-program">Selengkapnya <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://images.hukumonline.com/frontend/lt6041b63f050e0/lt6041b79c70305.jpg" loading="lazy" alt="Wakaf">
+                            <div class="program-badge badge-success">
+                                <i class="fas fa-mosque"></i>
+                            </div>
+                        </div>
+                        <div class="program-content">
+                            <h4 class="program-title">Wakaf Tanah & Bangunan</h4>
+                            <p class="program-description">Wakaf tanah untuk masjid, sekolah, rumah yatim, dan fasilitas sosial lainnya yang berkelanjutan.</p>
+                            <div class="program-stats">
+                                <div class="stat">
+                                    <i class="fas fa-landmark"></i>
+                                    <span>50+ Aset Wakaf</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>15 Provinsi</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-program">Selengkapnya <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="program-card">
+                        <div class="program-image">
+                            <img src="https://png.pngtree.com/png-vector/20230120/ourmid/pngtree-man-gives-alms-or-zakat-in-the-holy-month-of-ramadhan-png-image_6563623.png" loading="lazy" alt="Shodaqoh">
+                            <div class="program-badge badge-warning">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                        </div>
+                        <div class="program-content">
+                            <h4 class="program-title">Shodaqoh Darurat</h4>
+                            <p class="program-description">Bantuan cepat untuk korban bencana alam, musibah, dan kebutuhan darurat lainnya.</p>
+                            <div class="program-stats">
+                                <div class="stat">
+                                    <i class="fas fa-heartbeat"></i>
+                                    <span>Response 24 Jam</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-box"></i>
+                                    <span>10.000+ Paket</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-program">Selengkapnya <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistik -->
+    <section class="section-padding stats-section">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <span class="section-badge light">Dampak Kami</span>
+                <h2 class="section-title text-white">Dampak Nyata yang Telah Kami Ciptakan</h2>
+                <p class="section-description text-white-50">Bersama Anda, kami telah menciptakan perubahan nyata bagi ribuan saudara kita</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="stat-number" data-target="12500">0</h3>
+                        <p class="stat-label">Mustahik Terbantu</p>
+                        <div class="stat-decoration"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <h3 class="stat-number" data-target="85">0</h3>
+                        <p class="stat-label">Kepuasan Donatur</p>
+                        <div class="stat-decoration"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3 class="stat-number" data-target="300">0</h3>
+                        <p class="stat-label">Program Terlaksana</p>
+                        <div class="stat-decoration"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <h3 class="stat-number" data-target="5000">0</h3>
+                        <p class="stat-label">Donatur Setia</p>
+                        <div class="stat-decoration"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimoni -->
+    <section id="testimoni" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <span class="section-badge">Testimoni</span>
+                <h2 class="section-title">Apa Kata Donatur Kami</h2>
+                <p class="section-description">Kepercayaan dan kepuasan donatur adalah motivasi terbesar kami</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <i class="fas fa-quote-right quote-icon"></i>
+                        </div>
+                        <p class="testimonial-text">Saya sangat percaya dengan Khoiro Ummah karena laporan keuangannya sangat transparan dan programnya benar-benar menyentuh kebutuhan riil.</p>
+                        <div class="testimonial-author">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwUFrydZFwqGT3XaecOvI09y9iM-qj2DDYO7n26crvdxjxf0f_ttjtGmc&s" loading="lazy" alt="Siti Nurhaliza">
+                            <div>
+                                <h5>Siti Nurhaliza</h5>
+                                <p>Donatur Tetap Sejak 2018</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <i class="fas fa-quote-right quote-icon"></i>
+                        </div>
+                        <p class="testimonial-text">Saya wakaf tanah untuk masjid di desa saya melalui Khoiro Ummah, prosesnya cepat dan aman. Alhamdulillah, masjid sudah berdiri!</p>
+                        <div class="testimonial-author">
+                            <img src="https://skiblue.co.uk/wp-content/uploads/2015/06/dummy-profile.png" loading="lazy" alt="Ahmad Fauzi">
+                            <div>
+                                <h5>Ahmad Fauzi</h5>
+                                <p>Wakif - Jawa Barat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <i class="fas fa-quote-right quote-icon"></i>
+                        </div>
+                        <p class="testimonial-text">Setiap bulan saya donasi shodaqoh kecil melalui aplikasi mereka. Saya bisa lihat langsung dampaknya. Sangat memotivasi!</p>
+                        <div class="testimonial-author">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdIx5P4tKEkAg4YGcDZbqkaQ3EzfNfZrPOCw&s" loading="lazy" alt="Rina Susanti">
+                            <div>
+                                <h5>Rina Susanti</h5>
+                                <p>Donatur Bulanan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section id="donasi" class="cta-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <div class="cta-content">
+                        <span class="cta-badge"><i class="fas fa-heart me-2"></i>Mari Berbagi Kebaikan</span>
+                        <h2 class="cta-title">Mari Bersama Wujudkan Kebaikan!</h2>
+                        <p class="cta-description">Setiap rupiah yang Anda salurkan melalui Khoiro Ummah akan menjadi bagian dari solusi nyata bagi saudara-saudara kita yang membutuhkan.</p>
+                        <div class="cta-features">
+                            <div class="cta-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>100% Transparan & Amanah</span>
+                            </div>
+                            <div class="cta-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Laporan Donasi Real-time</span>
+                            </div>
+                            <div class="cta-feature">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Dampak Terukur & Nyata</span>
+                            </div>
+                        </div>
+                        <div class="cta-buttons">
+                            <a href="#" class="btn btn-light btn-lg">
+                                <i class="fas fa-hand-holding-heart me-2"></i>Donasi Sekarang
+                            </a>
+                            <a href="#kontak" class="btn btn-outline-light btn-lg">
+                                <i class="fas fa-phone me-2"></i>Hubungi Kami
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center" data-aos="fade-left">
+                    <div class="cta-image">
+                        <img src="https://hatam.org/wp-content/uploads/2020/07/hatam.jpg" loading="lazy" alt="Donasi" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Berita Section -->
+    <section id="berita" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <span class="section-badge">Berita & Update</span>
+                <h2 class="section-title">Berita Terbaru</h2>
+                <p class="section-description">Update terkini seputar aktivitas, program, dan pencapaian Khoiro Ummah</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="https://izi.or.id/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-07-at-4.01.53-PM-1-1024x768.jpeg" loading="lazy" alt="Berita 1">
+                            <div class="news-category">Bantuan Bencana</div>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span><i class="far fa-calendar me-1"></i> 10 November 2025</span>
+                                <span><i class="far fa-user me-1"></i> Admin</span>
+                            </div>
+                            <h4 class="news-title">Khoiro Ummah Salurkan Zakat untuk Korban Banjir di Jawa Tengah</h4>
+                            <p class="news-excerpt">Tim kami telah menyalurkan bantuan logistik dan uang tunai kepada 500 keluarga terdampak banjir di Kabupaten Semarang...</p>
+                            <a href="#" class="news-link">Baca Selengkapnya <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="https://yatimmandiri.org/news/wp-content/uploads/2022/03/Wakaf-Al-Quran-dan-Iqro.jpeg" loading="lazy" alt="Berita 2">
+                            <div class="news-category category-education">Pendidikan</div>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span><i class="far fa-calendar me-1"></i> 5 November 2025</span>
+                                <span><i class="far fa-user me-1"></i> Admin</span>
+                            </div>
+                            <h4 class="news-title">Launching Program Wakaf Pendidikan untuk Anak Yatim</h4>
+                            <p class="news-excerpt">Kami meluncurkan program wakaf pendidikan yang bertujuan memberikan beasiswa dan fasilitas belajar bagi 100 anak yatim...</p>
+                            <a href="#" class="news-link">Baca Selengkapnya <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <article class="news-card">
+                        <div class="news-image">
+                            <img src="https://asset-2.tribunnews.com/babel/foto/bank/images/20250904_Baznas-Awards.jpg" loading="lazy" alt="Berita 3">
+                            <div class="news-category category-award">Penghargaan</div>
+                        </div>
+                        <div class="news-content">
+                            <div class="news-meta">
+                                <span><i class="far fa-calendar me-1"></i> 1 November 2025</span>
+                                <span><i class="far fa-user me-1"></i> Admin</span>
+                            </div>
+                            <h4 class="news-title">Khoiro Ummah Raih Penghargaan Lembaga Amil Zakat Terbaik 2025</h4>
+                            <p class="news-excerpt">Penghargaan diberikan oleh Kementerian Agama atas kinerja transparansi, akuntabilitas, dan dampak sosial yang signifikan...</p>
+                            <a href="#" class="news-link">Baca Selengkapnya <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galery Section -->
+    <section id="galery" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <span class="section-badge">Galery</span>
+                <h2 class="section-title">Galery Kegiatan</h2>
+                <p class="section-description">Dokumentasi kegiatan dan program yang telah kami laksanakan</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL4ny99IXG0-fiv6EMqyUnbecObO3SHC8ZiA&s" loading="lazy" alt="Galery 1">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://baznas.jogjakota.go.id/assets/instansi/baznas/article/20201008033153.JPG" loading="lazy" alt="Galery 2">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://sumsel.baznas.go.id/_next/image?url=https%3A%2F%2Fbucket-api.baznas.go.id%2Fbucket-api%2Ffile%3Fbucket%3Dbzn-fdr-smb-p5739641%26file%3Dattachments%2Fagenda%2F1733887642928702803_568-IMG-20241211-WA0009.jpg&w=3840&q=75" loading="lazy" alt="Galery 3">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="400">
+                    <img src="https://bucket-api.baznas.go.id/bucket-api/file?bucket=bzn-fdr-smb-p5739641&file=attachments/berita/NjYwNTE3MzAwMzc3MzA.jpeg" loading="lazy" alt="Galery 4">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="500">
+                    <img src="https://api.minio.jatimprov.go.id/kominfo-jatim/images/1000826179.jpg" loading="lazy" alt="Galery 5">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-aos="zoom-in" data-aos-delay="600">
+                    <img src="https://www.baznasjabar.org/images/news/1744685817_67fdcaf90a797.jpeg" loading="lazy" alt="Galery 6">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="kontak" class="section-padding">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <span class="section-badge">Kontak</span>
+                <h2 class="section-title">Hubungi Kami</h2>
+                <p class="section-description">Ada pertanyaan? Ingin berkolaborasi? Atau ingin menjadi donatur? Silakan hubungi kami!</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="contact-info-wrapper">
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Alamat</h5>
+                                <p>Kompleks Pasar Manis, Ponpes Khoiro Ummah<br>Bentar-Salem-Brebes, Jawa Tengah</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Telepon</h5>
+                                <p><a href="tel:+622112345678">+62 21 1234 5678</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Email</h5>
+                                <p><a href="mailto:info@khoiroummah.org">info@khoiroummah.org</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-info-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>WhatsApp</h5>
+                                <p><a href="https://wa.me/6281234567890">+62 812 3456 7890</a></p>
+                            </div>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <div class="contact-form-wrapper">
+                        <form id="contact-form">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name"><i class="fas fa-user me-2"></i>Nama Lengkap</label>
+                                        <input type="text" class="form-control" id="name" placeholder="Masukkan nama lengkap" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email"><i class="fas fa-envelope me-2"></i>Email</label>
+                                        <input type="email" class="form-control" id="email" placeholder="Masukkan email Anda" required>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="subject"><i class="fas fa-tag me-2"></i>Subjek</label>
+                                        <input type="text" class="form-control" id="subject" placeholder="Masukkan subjek pesan" required>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="message"><i class="fas fa-comment me-2"></i>Pesan</label>
+                                        <textarea class="form-control" id="message" rows="5" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                                        <i class="fas fa-paper-plane me-2"></i>Kirim Pesan
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row g-4">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-widget">
+                            <div class="footer-logo mb-3">
+                                <img src="assets/images/logo.png" alt="Khoiro Ummah" height="50" loading="lazy">
+                                <h4>Khoiro Ummah</h4>
+                            </div>
+                            <p class="footer-description">Lembaga Amil Zakat, Wakaf & Shodaqoh Khoiro Ummah — Menebar kebaikan, menyentuh hati.</p>
+                            <div class="footer-social">
+                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <div class="footer-widget">
+                            <h5 class="footer-title">Link Cepat</h5>
+                            <ul class="footer-links">
+                                <li><a href="#home"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
+                                <li><a href="#tentang"><i class="fas fa-chevron-right me-2"></i>Tentang</a></li>
+                                <li><a href="#program"><i class="fas fa-chevron-right me-2"></i>Program</a></li>
+                                <li><a href="#berita"><i class="fas fa-chevron-right me-2"></i>Berita</a></li>
+                                <li><a href="#kontak"><i class="fas fa-chevron-right me-2"></i>Kontak</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h5 class="footer-title">Program Kami</h5>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Zakat Produktif</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Wakaf Tanah & Bangunan</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Shodaqoh Darurat</a></li>
+                                <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Donasi Bulanan</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-widget">
+                            <h5 class="footer-title">Newsletter</h5>
+                            <p class="footer-newsletter-text">Dapatkan update terbaru program dan kegiatan kami</p>
+                            <form class="newsletter-form">
+                                <div class="input-group">
+                                    <input type="email" class="form-control" placeholder="Email Anda" required>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="copyright">&copy; 2025 Lembaga Amil Zakat Khoiro Ummah. All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="footer-bottom-links">
+                            <a href="#">Privacy Policy</a>
+                            <span class="separator">|</span>
+                            <a href="#">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation - Lazy Load -->
+    <script>
+        // Lazy load AOS
+        const aosScript = document.createElement('script');
+        aosScript.src = 'https://unpkg.com/aos@2.3.4/dist/aos.js';
+        aosScript.onload = function() {
+            AOS.init({
+                duration: 600,
+                easing: 'ease-out-cubic',
+                once: true,
+                offset: 50,
+                disable: function() {
+                    return window.innerWidth < 768;
+                }
+            });
+        };
+        document.body.appendChild(aosScript);
+
+        const aosCSS = document.createElement('link');
+        aosCSS.rel = 'stylesheet';
+        aosCSS.href = 'https://unpkg.com/aos@2.3.4/dist/aos.css';
+        document.head.appendChild(aosCSS);
+    </script>
+
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
